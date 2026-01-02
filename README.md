@@ -15,3 +15,24 @@
 
 # 2025 VERIFICATION
 - Prioritize Dec 2025 versions of VIC Acts and AFCA jurisdictional limits.
+
+## Australian Law School Super GPT bootstrap
+
+Use `auslaw_super_gpt.py` to stand up an OpenAI Assistant tuned for Australian legal research (update 11 Sep 2025). The script mirrors the beta Assistants flow: upload reference PDFs/text files, create the Assistant with file search enabled, start a thread, and chat interactively.
+
+### Prerequisites
+- Python 3.10+
+- `OPENAI_API_KEY` exported in your environment
+- Dependencies: `pip install -r requirements.txt`
+
+### Quick start
+```bash
+python auslaw_super_gpt.py --upload path/to/cbus_death_benefit_pds.pdf
+```
+
+Options:
+- `--model`: override the model (default `gpt-4o`)
+- `--instruction-file`: supply custom instructions file instead of the built-in prompt
+- `--assistant-name`: change the Assistant name shown in the dashboard
+
+The default instructions stress concise statutory/case references (VIC focus) and return `DATA ABSENT` when certainty is missing. Replies include a disclaimer that the content is general information only and not legal or financial advice.
